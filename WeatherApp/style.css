@@ -10,15 +10,31 @@ body{
     align-items: center;
     justify-content: center;
     font-family: 'Poppins',sans-serif;
-    background-color: #2f3640
+    background-color: #fff;
 }
+body.dark{
+    background-color: #242424;
+}
+body.dark * {
+    color: #ffa502  !important;
+}
+body.dark .img-container{
+    border: 3px solid #ffa502;
+}
+body.dark input{
+    color: #242424 !important;
+}
+body.dark .dark-mode-toggler{
+    background-color: #fff;
+}
+
 img{
     width: 100%;
     height: 100%;
     object-fit: contain;
 }
 .img-container{
-    border: 3px solid #ffa502;
+    border: 3px solid #242424;
     border-radius: 5px;
 }
 .container{
@@ -34,7 +50,7 @@ img{
 }
 .container h1{
     margin: 1rem;
-    color: #ffa502;
+    color: #242424;
     font-size: 4rem;
     text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
     border-bottom: 1px solid;
@@ -50,14 +66,14 @@ img{
     justify-content: center;
 }
 .wrapper input{
-    background-color: #2f3640;
+    background-color: #fff;
     width: 100%;
     height: 40px;
     outline: none;
     border: none;
     border-radius: 5px;
     text-align: center;
-    color: #fff;
+    color: #242424;
     box-shadow: 0px 2px 5px 5px rgba(0, 0, 0, 0.5);
 }
 .wrapper input:focus{
@@ -81,14 +97,44 @@ img{
    box-shadow: 0px 2px 5px 5px rgba(0, 0, 0, 0.5);
    font-weight: 600;
 }
-.card{
+.warning{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #c0392b;
+    width: 40%;
+    min-height: auto;
+    margin: 2rem auto;
+    border-radius: 10px;
+    display: none;
+}
+.warning.active{
+    display: block;
+}
+.warning span{
+    font-size: 3rem;
+    color: #242424;
+    font-family: 'Poppins',sans-serif;
+}
+.card,.dark-mode-toggler{
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    background-color: transparent;
+    border: none;
+}
+.spinner-border{
+    height: 50px;
+    width: 50px;
+    font-size: 2rem;
+    display: none;
+}
+.spinner-border.active{
+    display: block;
 }
 .card h3{
-    color: #ffa502;
+    color: #242424;
     font-size: 3rem;
     text-transform: uppercase;
     margin-bottom: 1rem;
@@ -101,13 +147,13 @@ img{
     margin-bottom: 1rem;
 }
 .card .weather{
-    color: #ffa502;
+    color: #242424;
     font-size: 1.9rem;
     margin-bottom: 1rem;
     text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
 }
 .card .Temp{
-    color: #ffa502;
+    color: #242424;
     font-size: 1.9rem;
     text-shadow:  5px 5px 10px rgba(0, 0, 0, 0.5);
     font-weight: 300;
@@ -134,6 +180,21 @@ img{
     font-weight: 600;
     color: #ffa502;
     font-size: 3rem;
+}
+.dark-mode-toggler{
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    width: 50px;
+    height: 50px;
+    background-color: #242424;
+    color: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.fa-x{
+    font-size: 11rem;
+    color: red;
 }
 @media screen and (max-width:900px){
     .wrapper{
